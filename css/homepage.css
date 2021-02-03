@@ -6,7 +6,7 @@
   background-color: antiquewhite;
 }
 #map {
-  height: 60vh;
+  height: 65vh;
   width: 45vw;
   margin: auto;
   border: 12px solid rgba(0, 0, 0, 0.322);
@@ -16,8 +16,20 @@
 .sidebar-container {
   background-color: lavender;
 }
+
 .nested-container { 
   background-color: #fff;
+  height: 100%
+}
+.markers-ul  { 
+  text-align: left;
+}
+li { 
+  margin: 5px !important;
+  width: 120px;
+  display: inline-block !important;
+  cursor: default !important;
+
 }
 
 .gali {

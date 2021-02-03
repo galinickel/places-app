@@ -14,18 +14,39 @@ function initMap() {
             lat: mapsMouseEvent.latLng.lat(),
             lng: mapsMouseEvent.latLng.lng()
         }
-        userMarkers.push(position)
-        console.log(userMarkers);
+        if (userMarkers.length > 9) {
+            alert('Too many marked locations. Please remove some before adding further!')
+            return
+        }
         addMarker(position)
+        renderMarkersList(position)
     });
 }
-function addMarker(position) { 
-    let marker = new google.maps.Marker({
-        position: position,
-        map:map  })
+function addMarker(position) {
+        let marker = new google.maps.Marker({
+            position: position,
+            map: map,
+        })
+    userMarkers.push({position: position, name: prompt('name')})
+    console.log(userMarkers);
+}
+function renderMarkersList(pos) { 
+    let elList = document.querySelector('.markers-list')
+    elList.innerHTML = `<ul class="markers-ul">`
+    userMarkers.forEach((coord,i) => elList.innerHTML += `<li class="btn btn-light">
+    ${coord.name}
+    </li>
+    <span> Rename </span>
+    <span onclick(onGoTo(${i}))> Go To </span>
+    <span onclick="onRemoveMark(${i})"> Delete </span>`)
+    elList.innerHTML += `</ul>`
+    // elList.innerHTML+=`${pos.lat},${pos.lng}`
 }
 
-
+function onRemoveMark(i) { 
+    userMarkers.splice(i,1)
+    renderMarkersList()
+}
 function onGetUserLocation() {
     if (!navigator.geolocation) {
         alert("HTML5 Geolocation is not supported in your browser.");
