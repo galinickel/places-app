@@ -1,5 +1,7 @@
+let map;
+
 function initMap() {
-    let map = new google.maps.Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {
         center: {
             lat: 29.55805,
             lng: 34.94821
@@ -7,14 +9,19 @@ function initMap() {
         zoom: 14,
     });
     map.addListener("click", (mapsMouseEvent) => {
-        console.log(mapsMouseEvent.latLng);
-        console.log(mapsMouseEvent.Xa);
+        let position = {
+            lat: mapsMouseEvent.latLng.lat(),
+            lng: mapsMouseEvent.latLng.lng()
+        }
+        console.log(position);
     });
 }
-function getLocation(ev) { 
+
+function getLocation(ev) {
     console.log(ev);
 }
-function onGetUserLocation(){  
+
+function onGetUserLocation() {
     if (!navigator.geolocation) {
         alert("HTML5 Geolocation is not supported in your browser.");
         return;
@@ -25,7 +32,7 @@ function onGetUserLocation(){
 
 function showLocationOnMap(position) {
     console.log(position.coords);
-    map.setCenter(new google.maps.LatLng( position.coords.latitude, position.coords.longitude ))
+    map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
 
 }
 
