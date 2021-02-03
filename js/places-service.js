@@ -1,5 +1,6 @@
 let map;
 let userMarkers = []
+let mapMarkers= []
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -27,34 +28,11 @@ function addMarker(position) {
             position: position,
             map: map,
         })
+        mapMarkers.push(marker)
     userMarkers.push({position: position, name: prompt('name')})
-    console.log(userMarkers);
-}
-function renderMarkersList(pos) { 
-    let elList = document.querySelector('.markers-list')
-    elList.innerHTML = `<ul class="markers-ul">`
-    userMarkers.forEach((coord,i) => elList.innerHTML += `<li class="btn btn-light">
-    ${coord.name}
-    </li>
-    <span> Rename </span>
-    <span onclick(onGoTo(${i}))> Go To </span>
-    <span onclick="onRemoveMark(${i})"> Delete </span>`)
-    elList.innerHTML += `</ul>`
-    // elList.innerHTML+=`${pos.lat},${pos.lng}`
 }
 
-function onRemoveMark(i) { 
-    userMarkers.splice(i,1)
-    renderMarkersList()
-}
-function onGetUserLocation() {
-    if (!navigator.geolocation) {
-        alert("HTML5 Geolocation is not supported in your browser.");
-        return;
-    }
-    navigator.geolocation.getCurrentPosition(showLocationOnMap, handleLocationError);
 
-}
 
 function showLocationOnMap(position) {
     console.log(position.coords);
@@ -80,3 +58,4 @@ function handleLocationError(error) {
             break;
     }
 }
+
