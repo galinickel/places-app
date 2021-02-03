@@ -1,4 +1,26 @@
+* {
+  box-sizing: border-box;
+  width: 100%;
+}
+.map-container { 
+  background-color: antiquewhite;
+}
 #map {
-    height: 100vh;
-  }
-  
+  height: 60vh;
+  width: 45vw;
+  margin: auto;
+  border: 12px solid rgba(0, 0, 0, 0.322);
+}
+
+
+.sidebar-container {
+  background-color: lavender;
+}
+.nested-container { 
+  background-color: #fff;
+}
+
+.gali {
+  background-color: antiquewhite;
+height: 40vh;
+}
