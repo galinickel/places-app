@@ -1,5 +1,5 @@
 let map;
-let userMarkers = []
+// let userMarkers = []
 let mapMarkers= []
 
 function initMap() {
@@ -15,7 +15,7 @@ function initMap() {
             lat: mapsMouseEvent.latLng.lat(),
             lng: mapsMouseEvent.latLng.lng()
         }
-        if (userMarkers.length > 9) {
+        if (mapMarkers.length > 9) {
             alert('Too many marked locations. Please remove some before adding further!')
             return
         }
@@ -27,22 +27,18 @@ function addMarker(position) {
         let marker = new google.maps.Marker({
             position: position,
             map: map,
+            name: prompt('name')
         })
-        mapMarkers.push(marker)
-    userMarkers.push({position: position, name: prompt('name')})
+    mapMarkers.push(marker)
+    console.log(marker.position);
 }
 
-
-
 function showLocationOnMap(position) {
-    console.log(position.coords);
     map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude))
-
 }
 
 function handleLocationError(error) {
     var locationError = document.getElementById("locationError");
-
     switch (error.code) {
         case 0:
             locationError.innerHTML = "There was an error while retrieving your location: " + error.message;
