@@ -1,9 +1,7 @@
 'use strict'
 function init() { 
-    //FIXME: changing color on init not working at themoment
-    let userBgCol = loadFromStorage(userPrefs.userBgCol)
-    let userTxtCol = loadFromStorage(userPrefs.userTxtCol)
-    console.log(loadFromStorage(userPrefs));
+    let userBgCol = loadFromStorage('user-prefs').userBgCol
+    let userTxtCol = loadFromStorage('user-prefs').userTxtCol
     changeCols(userBgCol, userTxtCol)
     initMap()
     
