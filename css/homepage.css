@@ -4,6 +4,7 @@
 }
 .row { 
   width: 90% !important;
+  
 }
 .map-container {
   height:100vh
@@ -11,15 +12,21 @@
 h1 { 
   font-family: 'Ubuntu Mono', monospace;
   margin: 25px;
+  margin-top: 70px;
 }
 .h1-icon { 
 display: inline;
 }
+#map button,
+button:active,
+button:hover,
+.gmnoprint { 
+width: 120px !important;}
 #map {
   height: 90vh;
   width: 45vw;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 80px;
 border-radius: 10px;
   border: 2px solid rgba(0, 0, 0, 0.322);
 }
@@ -80,4 +87,29 @@ li {
   height: 40px !important;
   margin-left: 15px;
 
+}
+
+form { 
+  width: 300px;
+
+}
+.colors { 
+  display: flex;
+  justify-content: space-around;
+}
+.form-color { 
+  display: inline;
+  margin: 0 15px;
+  width: 150px;
+  height: 30px;
+  border: none;
+  padding: 0;
+}
+.modal-body { 
+  width: 400px;
+
+}
+
+ button:hover { 
+  width: 100% !important;
 }
