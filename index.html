@@ -4,40 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/user-pref.css">
     <link rel="stylesheet" href="css/places.css">
     <!-- add favicon -->
     <title>Placekeeper App</title>
-
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXoh7iyJcLJL1ydH4SurKXf8Obf_ymUSM&callback=initMap">
+</script>
 </head>
 
 <body onload="initMap()">
     <section class="main">
-
+        <div class="row">
+            <div class="col-md sidebar-container">
+                <h1>PLACEFINDER <i class="fas fa-crosshairs" onclick="onGetUserLocation()"></i>
+                </h1>
+                <div class="col-sm-6 nested-container"></div>
+            </div>
+            <div class="map-container col-lg">
+                <div id="map" class="center" >
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="row">
-    <div class="col-md sidebar-container">
-        <h1>MAP</h1>
-<span class="user-location" onclick="onGetUserLocation()"><i class="fas fa-crosshairs"></i></span>
-        <div class="col-sm-6 nested-container"></div>
-
+        <div class="col-md gali">
+        </div>
     </div>
-    
-    <div class="map-container col-lg">
-    <div id="map" class="center">
-    </div>
-</div>
-</div>
-</section>
-<div class="row">
-    <div class="col-md gali">
-
-    </div>
-</div>
-
-    <script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXoh7iyJcLJL1ydH4SurKXf8Obf_ymUSM&callback=initMap"></script>
 
     <script src="js/util-service.js"></script>
     <script src="js/storage-service.js"></script>

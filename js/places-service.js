@@ -1,24 +1,29 @@
-let map;
-
 function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
+    let map = new google.maps.Map(document.getElementById("map"), {
         center: {
             lat: 29.55805,
             lng: 34.94821
         },
         zoom: 14,
     });
+    map.addListener("click", (mapsMouseEvent) => {
+        console.log(mapsMouseEvent.latLng);
+        console.log(mapsMouseEvent.Xa);
+    });
 }
-
+function getLocation(ev) { 
+    console.log(ev);
+}
 function onGetUserLocation(){  
     if (!navigator.geolocation) {
         alert("HTML5 Geolocation is not supported in your browser.");
         return;
     }
-    navigator.geolocation.getCurrentPosition(showLocation, handleLocationError);
+    navigator.geolocation.getCurrentPosition(showLocationOnMap, handleLocationError);
+
 }
 
-function showLocation(position) {
+function showLocationOnMap(position) {
     console.log(position.coords);
     map.setCenter(new google.maps.LatLng( position.coords.latitude, position.coords.longitude ))
 
