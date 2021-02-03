@@ -16,13 +16,10 @@ return
     </li>
     <span class="buttons">
     <span class ="btn btn-info btn-markerList" onclick="onRename(${i})"> <i class="fas fa-edit"></i>
-
     </span>
     <span class ="btn btn-success btn-markerList" onclick="onGoTo(${i})"><i class="fas fa-map-marker-alt"></i>
-
     </span>
     <span class ="btn btn-danger btn-markerList" onclick="onRemoveMark(${i})"> <i class="far fa-trash-alt"></i>
-
     </span></span>`)
     elList.innerHTML += `</ul>`
 }
