@@ -47,12 +47,11 @@ border-radius: 10px;
 }
 
 .sidebar-container {
-  background-color: #fff;
   height: 70vh;
 }
 
 .nested-container {
-  background-color: #fff;
+  background-color: lightgray;
   height: 80vh;
   float: right;
   margin-right: 50px;
@@ -112,4 +111,9 @@ form {
 
  button:hover { 
   width: 100% !important;
+}
+
+.modal-btn{
+  top:0 !important;
+  width: 35% ;
 }

@@ -21,7 +21,7 @@
     </script>
 </head>
 
-<body onload="initMap()">
+<body onload="init()">
     <section class="main">
         <div class="row">
             <div class="col-md sidebar-container">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="btn btn-primary" data-toggle="modal" href="#portfolioModal1">Open modal from the right</a>
+                <a class="btn btn-light modal-btn" data-toggle="modal" href="#portfolioModal1">User Preferences</a>
             </div>
             <div class="map-container col-lg">
                 <div id="map" class="center">
@@ -77,8 +77,8 @@
                                                 required>
                                         </div>
                                         <div class="mb-2 colors">
-                                            <label for="bgc" class="  form-label"> BG color</label>
-                                            <input type="color" class=" form-color form-control" id="bgc" name="user-bgc">
+                                            <label for="bg-color" class="  form-label"> BG color</label>
+                                            <input type="color" class=" form-color form-control" id="bg-color" name="user-bg-color">
                                             <label for="txt-color" class="  form-label"> TXT color</label>
                                             <input type="color" class=" form-color form-control" id="txt-color"
                                                 name="user-txt-color">
@@ -88,7 +88,7 @@
                                             <input type="date" class="form-control" id="date-of-birth"
                                                 name="user-bday">
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-light">Submit</button>
                                     </form>
                             </div>
                         </div>
@@ -103,8 +103,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
         </script>
-        <script src="js/util-service.js"></script>
         <script src="js/storage-service.js"></script>
+        <script src="js/util-service.js"></script>
         <script src="js/userPref-service.js"></script>
         <script src="js/places-service.js"></script>
         <script src="js/places-controller.js"></script>
