@@ -15,7 +15,7 @@ function initMap() {
             lat: mapsMouseEvent.latLng.lat(),
             lng: mapsMouseEvent.latLng.lng()
         }
-        if (mapMarkers.length > 9) {
+        if (mapMarkers.length > 8) {
             alert('Too many marked locations. Please remove some before adding further!')
             return
         }

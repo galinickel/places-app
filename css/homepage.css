@@ -2,37 +2,80 @@
   box-sizing: border-box;
   width: 100%;
 }
-.map-container { 
+
+.map-container {
   background-color: antiquewhite;
 }
+
 #map {
   height: 65vh;
   width: 45vw;
   margin: auto;
+  margin-top: 25px;
+
   border: 12px solid rgba(0, 0, 0, 0.322);
 }
 
+@media screen and (max-width: 600px) {
+
+  .col-md,
+  .col-sm,
+  .nested-container,
+  .markers-list {
+    width: 100% !important;
+  }
+
+  #map {
+    width: 80%;
+  }
+
+}
 
 .sidebar-container {
-  background-color: lavender;
+  background-color: #fff;
+  height: 70vh;
 }
 
-.nested-container { 
+.nested-container {
   background-color: #fff;
-  height: 100%
+  height: 100%;
+  float: right;
+  margin-right: 50px;
+  border-radius: 10px;
+  height: 450px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.192);
+  border: 2px solid rgba(0, 0, 0, 0.192);
 }
-.markers-ul  { 
+
+.markers-ul {
   text-align: left;
 }
-li { 
+
+.text-container {
+  margin: 150px 35px;
+}
+
+li {
   margin: 5px !important;
   width: 120px;
   display: inline-block !important;
   cursor: default !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buttons {
+  margin-left: 35px;
+}
+
+.btn-markerList {
+  width: 40px !important;
+  height: 40px !important;
+  margin-left: 15px;
 
 }
 
 .gali {
   background-color: antiquewhite;
-height: 40vh;
+  height: 40vh;
 }

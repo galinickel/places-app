@@ -1,14 +1,33 @@
 function renderMarkersList(pos) {
     let elList = document.querySelector('.markers-list')
+    console.log(elList.innerHTML);
+    if (!mapMarkers.length) { 
+        elList.innerHTML = `<div class="text-container">
+        <h5>Find and manage your favorite locations!</h5>
+        <p class="text-muted ">
+            Nothing here? Add something new!
+        </p>
+    </div>`
+return
+    }
     elList.innerHTML = `<ul class="markers-ul">`
     mapMarkers.forEach((arrItem, i) => elList.innerHTML += `<li class="btn btn-light">
     ${arrItem.name}
     </li>
-    <span onclick="onRename(${i})"> Rename </span>
-    <span onclick="onGoTo(${i})"> Go To </span>
-    <span class ="btn btn-danger" onclick="onRemoveMark(${i})"> Delete </span>`)
+    <span class="buttons">
+    <span class ="btn btn-info btn-markerList" onclick="onRename(${i})"> <i class="fas fa-edit"></i>
+
+    </span>
+    <span class ="btn btn-success btn-markerList" onclick="onGoTo(${i})"><i class="fas fa-map-marker-alt"></i>
+
+    </span>
+    <span class ="btn btn-danger btn-markerList" onclick="onRemoveMark(${i})"> <i class="far fa-trash-alt"></i>
+
+    </span></span>`)
     elList.innerHTML += `</ul>`
 }
+
+
 
 function onRename(i) {
     var marker = mapMarkers[i]
