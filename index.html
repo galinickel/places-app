@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/homepage.css">
     <link rel="stylesheet" href="css/user-pref.css">
     <link rel="stylesheet" href="css/places.css">
-<!-- add favicon -->
+    <!-- add favicon -->
     <title>Placekeeper App</title>
-</head>
-<body>
-    
 
+</head>
+
+<body onload="initMap()">
+    <h1>MAP</h1>
+    <div id="map">
+    </div>
+    <script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXoh7iyJcLJL1ydH4SurKXf8Obf_ymUSM&callback=initMap"></script>
 
     <script src="js/util-service.js"></script>
     <script src="js/storage-service.js"></script>
     <script src="js/userPref-service.js"></script>
     <script src="js/places-service.js"></script>
+
 </body>
+
 </html>
