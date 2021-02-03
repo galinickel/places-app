@@ -1,4 +1,5 @@
 let map;
+let userMarkers = []
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -13,13 +14,17 @@ function initMap() {
             lat: mapsMouseEvent.latLng.lat(),
             lng: mapsMouseEvent.latLng.lng()
         }
-        console.log(position);
+        userMarkers.push(position)
+        console.log(userMarkers);
+        addMarker(position)
     });
 }
-
-function getLocation(ev) {
-    console.log(ev);
+function addMarker(position) { 
+    let marker = new google.maps.Marker({
+        position: position,
+        map:map  })
 }
+
 
 function onGetUserLocation() {
     if (!navigator.geolocation) {
