@@ -1,6 +1,7 @@
 let map;
 // let userMarkers = []
 let mapMarkers= []
+let storageMarkers = []
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -10,6 +11,8 @@ function initMap() {
         },
         zoom: 14,
     });
+
+
     map.addListener("click", (mapsMouseEvent) => {
         let position = {
             lat: mapsMouseEvent.latLng.lat(),
@@ -22,6 +25,7 @@ function initMap() {
         addMarker(position)
         renderMarkersList(position)
     });
+    
 }
 function addMarker(position) {
         let marker = new google.maps.Marker({
@@ -30,6 +34,8 @@ function addMarker(position) {
             name: prompt('name')
         })
     mapMarkers.push(marker)
+    storageMarkers.push({position: marker.position, name: marker.name})
+    saveToStorage('userPlaces', storageMarkers)
     console.log(marker.position);
 }
 
